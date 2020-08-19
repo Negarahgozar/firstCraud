@@ -32,16 +32,13 @@ public class HelloworldControllerTest {
     public void indexTest() throws Exception {
 
         Helloworld helloworld = new Helloworld(1L, "ali");
-
-
         given(helloWorldController.index()).willReturn(helloworld);
 
         mvc.perform(get("/hello")
-
                 .contentType(APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].name", is(helloworld.getName())));
-
+                .andExpect(jsonPath("$[0].name", is(helloworld)));
     }
+
 
 }

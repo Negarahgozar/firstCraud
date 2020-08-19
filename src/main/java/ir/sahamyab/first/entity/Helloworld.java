@@ -1,8 +1,13 @@
 package ir.sahamyab.first.entity;
 
+
+
+import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
 
 @Entity
 public class Helloworld {
@@ -10,6 +15,7 @@ public class Helloworld {
     @Id
     @GeneratedValue
     private Long id;
+    private String name;
 
     public Helloworld() {
     }
@@ -18,8 +24,6 @@ public class Helloworld {
         this.id = id;
         this.name = name;
     }
-
-    private String name;
 
     public Long getId() {
         return id;
